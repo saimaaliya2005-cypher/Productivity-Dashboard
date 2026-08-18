@@ -34,6 +34,13 @@ function todoList() {
   function renderTask() {
     //localStorage.setItem('currentTasks', JSON.stringify(currentTasks));
     let allTask = document.querySelector(".allTask");
+      allTask.addEventListener("click", function (e) {
+    if (e.target.tagName === "BUTTON") {
+      currentTasks.splice(e.target.dataset.idx, 1);
+      localStorage.setItem("currentTasks", JSON.stringify(currentTasks));
+      renderTask();
+    }
+  });
 
     let sum = "";
 
@@ -42,7 +49,7 @@ function todoList() {
         sum +
         `<div class="task">
                         <h5>${elem.task} <span class = "${elem.imp}">imp</span></h5>
-                        <button id=${idx}>Mark as Completed</button>
+                        <button data-idx=${idx}>Mark as Completed</button>
                     </div>`;
     });
 

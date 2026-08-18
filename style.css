@@ -1,11 +1,14 @@
 :root{
-    --pri: #FFEAC5;
-    --sec: #431706;
-    --tri1: #E4B028;
-    --tri2: #6d5139;
-    --red: red;
-    --green: rgb(3, 159, 102);
-    --blue: rgb(7, 94, 181);
+    --pri: #0C1519;
+    --sec: #162127;
+    --tri1: #3A3534;
+    --tri2: #CF9D7B;
+    --coffee: #724B39;
+    --text: #e8d5c4;
+    --text-muted: #9a8575;
+    --red: #c45c4a;
+    --green: #3d9b7a;
+    --blue: #4a7eb5;
 }
 
 @font-face {
@@ -31,7 +34,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: aeonik;
-    color: var(--pri);
+    color: var(--text);
 }
 
 html, body{
@@ -42,7 +45,7 @@ html, body{
 #main{
     height: 100%;
     width: 100%;
-    background-color: var(--sec);
+    background-color: var(--pri);
 }
 
 section.allElems{
@@ -52,51 +55,50 @@ section.allElems{
 }
 
 .allElems header{
-    background-image: url(https://plus.unsplash.com/premium_photo-1675409848858-357d4833b406?q=80&w=1194&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-image: linear-gradient(rgba(12, 21, 25, 0.55), rgba(12, 21, 25, 0.7)),
+                      url(https://images.pexels.com/photos/2421195/pexels-photo-2421195.jpeg);
     background-position: center;
+    background-size: cover;
     height: 400px;
-    background-color: var(--tri2);
-    margin-top: 20px;
-    margin-left: 30px;
-    margin-right: 30px;
-    margin-bottom: 50px;
+    margin: 20px 30px 50px;
     border-radius: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 40px;
+    border: 1px solid rgba(58, 53, 52, 0.5);
 }
 
 header .header-1 h1{
     font-size: 100px;
     font-weight: 700;
     margin-bottom: 40px;
+    color: var(--tri2);
 }
 
 header .header-1 h2{
     font-size: 45px;
     font-weight: 500;
-}
-
-header .header-1 h4{
-    font-size: 70px;
-    font-weight: 500;
+    color: var(--text);
 }
 
 header .header-2 h2{
     font-size: 60px;
     font-weight: 500;
+    color: var(--tri2);
 }
 
 header .header-1 h4{
     font-size: 30px;
     font-weight: 500;
     margin-bottom: 40px;
+    color: var(--text-muted);
 }
 
 header .header-1 h3{
     font-size: 25px;
     font-weight: 500;
+    color: var(--text);
 }
 
 .allElems .allFeatures{
@@ -108,7 +110,9 @@ header .header-1 h3{
 }
 
 .elem{
-    background-color: #FFD93D;
+    background-color: var(--sec);
+    border: 1px solid rgba(58, 53, 52, 0.6);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     height: 400px;
     width: 330px;
     border-radius: 10px;
@@ -117,17 +121,32 @@ header .header-1 h3{
     position: relative;
     transition: all ease 0.2s;
     cursor: pointer;
-    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
 }
+
+/* .elem::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(12, 21, 25, 0.35) 0%,
+        rgba(12, 21, 25, 0.5) 50%,
+        rgba(12, 21, 25, 0.92) 100%
+    );
+    pointer-events: none;
+} */
 
 .elem img{
     display: block;
     height: 100%;
     width: 100%;
     object-fit: cover;
+    /* filter: sepia(35%) saturate(65%) brightness(80%) hue-rotate(-8deg); */
 }
 
 .elem h2{
+    background: linear-gradient(transparent, rgba(12, 21, 25, 0.92));
+    color: var(--tri2);
     position: absolute;
     bottom: 4%;
     right: 5%;
@@ -142,7 +161,7 @@ header .header-1 h3{
 .fullElem{
     height: 100%;
     width: 100%;
-    background-color: var(--sec);
+    background-color: var(--pri);
     padding: 40px;
     display: none;
     position: absolute;
@@ -151,7 +170,8 @@ header .header-1 h3{
 .back{
     position: absolute;
     right: 5%;
-    background-color: var(--red);
+    background-color: var(--coffee);
+    color: var(--text);
     padding: 15px 22px;
     border: none;
     border-radius: 10px;
@@ -179,14 +199,14 @@ header .header-1 h3{
 
 .todo-list-fullpage .todo-container .addTask{
     width: 33%;
-    background-color: var(--tri2);
+    background-color: var(--sec);
     height: 100%;
     border-radius: 20px;
 }
 
 .todo-list-fullpage .todo-container .allTask{
     width: 65%;
-    background-color: var(--tri2);
+    background-color: var(--sec);
     height: 100%;
     border-radius: 20px;
     display: flex;
@@ -207,14 +227,13 @@ header .header-1 h3{
     padding: 15px 25px;
     width: 100%;
     font-size: 29px;
-    background-color: var(--pri);
-    color: var(--sec);
     border-radius: 5px;
-    border: none;
     outline: none;
     margin-bottom: 20px;
     font-weight: 500;
-    
+    background-color: var(--pri);
+    color: var(--text);
+    border: 1px solid var(--tri1);
 }
 
 .todo-container .addTask form textarea{
@@ -222,8 +241,8 @@ header .header-1 h3{
     width: 100%;
     font-size: 28px;
     background-color: var(--pri);
-    color: var(--sec);
-    border: none;
+    color: var(--text);
+    border: 1px solid var(--tri1);
     outline: none;
     margin-bottom: 20px;
 }
@@ -232,7 +251,7 @@ header .header-1 h3{
     padding: 10px 25px;
     width: 100%;
     font-size: 26px;
-    background-color: var(--tri1);
+    background-color: var(--coffee);
     border-radius: 5px;
     border: none;
     outline: none;
@@ -257,7 +276,7 @@ header .header-1 h3{
 }
 
 .task h5{
-    color: var(--sec);
+    color: var(--text);
     font-size: 30px;
     display: flex;
     align-items: flex-start;
@@ -314,14 +333,16 @@ header .header-1 h3{
 
 .daily-planner-fullpage h2{
     font-size: 70px;
+    color: var(--tri2);
 }
 
 .daily-planner-fullpage .day-planner{
-    background-color: var(--tri2);
+    background-color: var(--sec);
     height: 85%;
     margin-top: 40px;
     width: 100%;
-    border-radius: 10px;
+    border: 1px solid rgba(58, 53, 52, 0.5);   /* optional */
+    border-radius: 16px;
     padding: 30px;
     display: flex;
     align-items: flex-start;
@@ -343,18 +364,24 @@ header .header-1 h3{
    top: 12%;
    left: 2%;
    font-size: 17px;
-   color: var(--tri1);
+   color: var(--tri2);
 } 
 
 .day-planner .day-planner-time input{
     padding: 20px 45px;
     width: 100%;
-    background-color: var(--sec);
+    background-color: var(--pri);
+    color: var(--text);
+    border: 1px solid var(--tri1);
     border-radius: 5px;
     border: none;
     font-size: 35px;
     padding-top: 34px;
     outline: none;
+}
+
+.day-planner .day-planner-time input:focus{
+    border-color: var(--coffee);
 }
 
 .motivational-fullpage{
@@ -380,7 +407,9 @@ header .header-1 h3{
     height: 100%;
     width: 100%;
     position: absolute;
-    background-color: var(--tri1);
+    background-color: var(--coffee);
+    opacity: 0.35;          /* add this line */
+    filter: blur(160px);    /* optional: make it a bit softer */
     border-radius: 50px;
     scale: 1.15;
     z-index: 8;
@@ -391,7 +420,7 @@ header .header-1 h3{
     width: 100%;
     z-index: 10;
     position: absolute;
-    background-color: var(--tri1);
+    background-color: var(--sec);
     padding: 17px;
     border-radius: 30px;
 }
@@ -403,7 +432,8 @@ header .header-1 h3{
 }
 
 .motivation-1 h2{
-    background-color: var(--tri2);
+    background-color: var(--coffee);
+    color: var(--text);
     padding: 30px;
     border-radius: 20px;
     font-size: 40px;
@@ -420,7 +450,7 @@ header .header-1 h3{
 .motivation-2 h1{
     font-size: 60px;
     font-weight: 700;
-    color: var(--sec);
+    color: var(--text);
 }
 
 .motivation-3{
@@ -431,7 +461,8 @@ header .header-1 h3{
 }
 
 .motivation-3 h2{
-    background-color: var(--tri2);
+    background-color: var(--tri1);
+    color: var(--tri2);
     padding: 30px;
     border-radius: 20px;
     font-size: 40px;
@@ -443,8 +474,9 @@ header .header-1 h3{
     position: absolute;
     top: 5%;
     right: 5%;
-    opacity: 0.2;
     height: 120px;
+    opacity: 0.15;
+    filter: invert(0.8);
 }
 
 .pomodoro-fullpage{
@@ -453,6 +485,7 @@ header .header-1 h3{
 
 .pomodoro-fullpage h2{
     font-size: 65px;
+    color: var(--tri2);
 }
 
 .pomodoro-fullpage .pomo-timer{
@@ -465,18 +498,28 @@ header .header-1 h3{
 
 .pomo-timer h1{
     font-size: 170px;
+    color: var(--text) !important;
+    font-weight: 300;        /* optional - looks cleaner */
+    letter-spacing: 4px;
 }
 
 .pomo-timer button{
-    background-color: var(--tri2);
+    background-color: var(--coffee);
+    color: var(--text);              /* important */
     padding: 15px 40px;
     font-size: 30px;
     margin: 10px;
-    border-radius: 5px;
+    border-radius: 10px;             /* slightly rounder */
     border: none;
-    box-shadow: 7px 7px 0px black;
+    box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.4);
     font-weight: 700;
     transition: all ease 0.2s;
+    cursor: pointer;
+}
+
+.pomo-timer button:hover{
+    background-color: var(--tri2);
+    color: var(--pri);
 }
 
 .pomo-timer button:active{
@@ -490,6 +533,7 @@ header .header-1 h3{
     left: 50%;
     transform: translate(-50%,0);
     background-color: var(--green);
+    color: var(--green);
     padding: 15px 30px;
     font-size: 30px;
     border-radius: 5px;
