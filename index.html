@@ -12,8 +12,6 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-
-
     <div id="main">
       <section class="allElems">
         <header>
@@ -22,18 +20,22 @@
             <h1>Wednesday, 7:00 pm</h1>
             <h4>Bhopal, (MP)</h4>
           </div>
+
           <div class="header-2">
             <h2>24 °C</h2>
-              <h3 class="Precipitation">Precipitation: 10%</h3>
-              <h3 class="Humidity">Humidity: 51%</h3>
-              <h3 class="Wind">Wind: 10 km/h</h3>
-              <h4>Cloudy</h4>
+            <h3 class="Precipitation">Precipitation: 10%</h3>
+            <h3 class="Humidity">Humidity: 51%</h3>
+            <h3 class="Wind">Wind: 10 km/h</h3>
+            <h4>Cloudy</h4>
           </div>
+
+          <button id="theme-toggle" class="theme-toggle">🌙</button>
         </header>
+
         <div class="allFeatures">
           <div class="todo elem" id="0">
             <img
-             src="https://i.pinimg.com/736x/74/2b/e4/742be4901b12eea95f2fd1acc7e875d5.jpg"
+              src="https://i.pinimg.com/736x/74/2b/e4/742be4901b12eea95f2fd1acc7e875d5.jpg"
               alt=""
             />
             <h2>To Do List</h2>
@@ -59,7 +61,7 @@
             />
             <h2>Pomodoro Timer</h2>
           </div>
-          <div class="goals elem" id="4">
+          <div class="focus elem" id="4">
             <img
               src="https://i.pinimg.com/1200x/82/97/14/8297144b51452aa51e7c1652eeb00049.jpg"
               alt=""
@@ -140,9 +142,38 @@
         </div>
       </section>
 
-      <section class="fullElem daily-goals-fullpage">
+      <section class="fullElem focus-space-fullpage">
         <button class="back" id="4">Close</button>
-        <h1>Daily Goals</h1>
+        <h1>Focus Space</h1>
+        <p class="streak">🔥 0 day streak</p>
+
+       <div class="focus-widgets">
+        <div class="heatmap-container">
+            <h3>Activity</h3>
+            <p class="heatmap-subtitle">Last 35 days</p>
+            <div class="heatmap"></div>
+        </div>
+
+        <div class="focus-player">
+            <h3>Now Playing</h3>
+
+              <div class="player-ring">
+        <svg class="ring-svg" viewBox="0 0 200 200">
+            <circle class="ring-bg" cx="100" cy="100" r="90" />
+            <circle class="ring-progress" cx="100" cy="100" r="90" />
+        </svg>
+        <button id="music-toggle" class="music-btn-large">▶</button>
+    </div>
+
+            <p class="station-name">Groove Salad</p>
+            <p class="station-desc">Ambient / Lofi</p>
+
+          <div class="player-controls">
+            <button id="music-prev" class="control-btn">⏮</button>
+            <button id="music-next" class="control-btn">⏭</button>
+          </div>
+        </div>
+        <audio id="audio-player" preload="none"></audio>
       </section>
     </div>
 
